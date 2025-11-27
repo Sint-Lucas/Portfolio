@@ -59,9 +59,10 @@ body {
 }
 
 .nav-content {
-    max-width: 1150px;
+    /* WIDER CONTAINER */
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,16 +101,27 @@ body {
 .main-content {
     position: relative;
     z-index: 10;
-    max-width: 1150px;
+    /* WIDER CONTAINER TO BALANCE LEFT/RIGHT */
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 6rem 1.5rem;
+    padding: 6rem 2rem;
 }
 
 .section { margin-bottom: 8rem; }
-.grid-2 { display: grid; grid-template-columns: 1fr; gap: 3rem; }
 
-@media (min-width: 768px) {
-    .grid-2 { grid-template-columns: 1fr 1fr; }
+/* GRID LAYOUT - Creates the "Space in the Middle" */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center; /* Vertically center content */
+}
+
+@media (min-width: 1024px) {
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem; /* LARGE GAP for space in the middle */
+    }
 }
 
 /* Hero Section */
@@ -117,6 +129,14 @@ body {
     min-height: 80vh;
     display: flex;
     align-items: center;
+}
+
+/* Aligned Left for clean split layout */
+.hero-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .status-badge {
@@ -133,9 +153,21 @@ body {
 
 h1 { font-size: 3rem; line-height: 1.2; margin: 0; }
 .subtitle { display: block; font-size: 2rem; color: var(--text-muted); font-weight: 400; margin-top: 0.5rem; }
-.bio { color: var(--text-muted); line-height: 1.6; max-width: 500px; margin: 1.5rem 0; }
 
-.cta-buttons { display: flex; gap: 1rem; margin-bottom: 2rem; }
+.bio {
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 1.5rem 0; /* Left alignment */
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: flex-start; /* Left alignment */
+}
+
 .btn {
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -152,7 +184,11 @@ h1 { font-size: 3rem; line-height: 1.2; margin: 0; }
 .btn-primary { background: var(--accent-teal); color: white; box-shadow: 0 4px 14px rgba(20, 184, 166, 0.3); }
 .btn-secondary { background: #1e293b; color: white; border: 1px solid #334155; }
 
-.social-links { display: flex; gap: 1.5rem; }
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start; /* Left alignment */
+}
 .social-links a { color: var(--text-muted); transition: color 0.3s; }
 .social-links a:hover { color: var(--accent-teal); }
 
@@ -177,7 +213,14 @@ h1 { font-size: 3rem; line-height: 1.2; margin: 0; }
 .icon-box.blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
 
 /* Skills */
-.section-header { margin-bottom: 3rem; }
+.section-header {
+    margin-bottom: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .underline { height: 4px; width: 80px; background: var(--accent-teal); border-radius: 2px; }
 .skills-grid {
     display: grid;
@@ -200,7 +243,17 @@ h1 { font-size: 3rem; line-height: 1.2; margin: 0; }
 .progress-bar-bg { width: 100%; height: 8px; background: #0f172a; border-radius: 4px; overflow: hidden; }
 .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent-teal), var(--accent-cyan)); border-radius: 4px; }
 
+/* Languages Helper */
+.center-text { text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 3rem; }
+.languages-section .grid-2 { margin-top: 1rem; }
+.lang-card { display: flex; justify-content: space-between; padding: 1rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; }
+.badge { padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; background: rgba(255,255,255,0.1); }
+.badge.teal { color: var(--accent-teal); background: rgba(20, 184, 166, 0.1); }
+.badge.cyan { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1); }
+
 /* Timeline */
+.section h2 { text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+
 .timeline { border-left: 1px solid var(--border-color); margin-left: 1rem; padding-left: 2rem; }
 .timeline-item { position: relative; margin-bottom: 2rem; }
 .timeline-dot {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './portfolio.css'; // We will create this CSS file next
+import './portfolio.css';
 import {
     Github, Linkedin, Mail, MapPin, Phone, Download,
     Code2, User, Briefcase, GraduationCap, Globe, Languages
@@ -88,8 +88,20 @@ const Portfolio = () => {
                             </div>
 
                             <div className="social-links">
-                                <a href="#"><Github size={24} /></a>
-                                <a href="#"><Linkedin size={24} /></a>
+                                <a
+                                    href="https://github.com/Jarizeelst"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Github size={24} />
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/jari-mol"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Linkedin size={24} />
+                                </a>
                             </div>
                         </div>
 
@@ -130,7 +142,7 @@ const Portfolio = () => {
                     </div>
 
                     <div className="languages-section">
-                        <h3><Languages /> Languages</h3>
+                        <h3 className="center-text"><Languages /> Languages</h3>
                         <div className="grid-2">
                             <div className="lang-card">
                                 <span>Dutch</span>
